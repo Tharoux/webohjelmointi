@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      </head>
+    <body>
+        <div class="container">
+            <h1>Simple POST Form</h1>
+            <form>
+                <label>id:</label>
+                <input id="id" type="number"/>
+
+                <label>Etunimi:</label>
+                <input id="firstname" type="text"/>
+
+                <label>Sukunimi:</label>
+                <input id="lastname" type="text"/>
+
+                <label>Kutsumanimi:</label>
+                <input id="callname" type="text"/>
+
+                <label>Syntymäaika:</label>
+                <input id="yob" type="date"/>
+
+                <label>Paino:</label>
+                <input id="weight" type="number"/>
+
+                <label>Kuvan linkki:</label>
+                <input id="imagelink" type="url"/>
+
+                <label>Urheilulaji:</label>
+                <input id="sport" type="text"/>
+
+                <label>Saavutukset:</label>
+                <input id="accomplishments" type="text"/>
+
+                <input type="submit" value="Add"/>
+            </form>
+            <div class="result">Lisää</div>
+        </div>
+        <script>
+            document.addEventListener("submit", sendData);
+
+            function sendData(e) {
+                e.preventDefault();
+
+                const id = document.querySelector("#id").value;
+                const firstname = document.querySelector("#firstname").value;
+                const lastname = document.querySelector("#lastname").value;
+                const callname = document.querySelector("#callname").value;
+                const yob = document.querySelector("#yob").value;
+                const weight = document.querySelector("#weight").value;
+                const imagelink = document.querySelector("#imagelink").value;
+                const sport = document.querySelector("#sport").value;
+                const accomplishments = document.querySelector("#accomplishments").value;
+
+                fetch("/addathlete/", {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        id: parseInt(id),
+                        firstName: String(firstname),
+                        lastName: String(lastname),
+                        callName: String(callname),
+                        yearOfBirth: Date(yob),
+                        weight: parseInt(weight),
+                        imagelink: String(imagelink),
+                        sport: String(sport),
+                        accomplishments: JSON.stringify({accomplishments})//
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const {
+                        result
+                    } = data;
+                    console.log(data.data);
+                    document.querySelector(
+                        ".result"
+                    ).innerHTML = `Arvot ovat ${data.data}`
+                })
+                .catch(err => console.log(err));
+            }
+        </script>
+    </body>
+</html>
