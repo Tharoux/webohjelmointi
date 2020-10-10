@@ -1,0 +1,14 @@
+a {
+    color: white;
+}
+
+li {
+    padding: 5px 10px;
+}
+
+.navbar-logo {
+    position: relative;
+    width: 20px;
+    bottom: 2.5px;
+    opacity: 70%;
+}
