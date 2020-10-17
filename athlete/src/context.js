@@ -3,8 +3,6 @@ import axios from "axios";
 
 const Context = React.createContext();
 
-//DIA 65!!!!!!!!!!!!!!!!!!!!
-
 const reducer = (state, action) => {
 
     switch (action.type) {
