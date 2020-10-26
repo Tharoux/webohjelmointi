@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" href="../src/week.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <h1>Viides viikko</h1>
+                <p>
+                    Tällä ja edellisellä viikolla tehtiin urheilija-sovellus, jossa piti olla back- ja frontend kuten aikaisempina viikkoina oli harjoiteltu. Tietokanta ja
+                    backend minulla nyt jo olikin lähes valmiina edellisten viikkojen johdosta, joten varsinaiseksi tehtäväksi muodostui frontendin tekeminen REACTilla.
+                </p>
+                <p>
+                    REACTia käyttäessäni opein miten paljon valmiita kirjastoja voi ihminen vihata. Ymmärrän REACTin tarkoituksen, joka on siis tuoda nettidevaamiseen
+                    "tavallisen" ohjelmoinnin kaltaiset mahdollisuudet, kuten elementtien dynaaminen luominen luomalla tageja, jotka generoivat halutut elementit. Esimerkiksi
+                    tässä ePortfoliossa olisin voinut käyttää REACTia luomaan koodit näyttävät osuudet, mutta suuresta inhostani REACTia kohtaan ja toisaalta rakkaudestani
+                    staattisia sivuja kohtaan olen päättänyt tehdä toisin.
+                </p>
+                <p>
+                    Tietokanna kanssa ongelmia tuli tietotyyppien kanssa, jota en vieläkään ole saanut korjatuksi saati ymmärretyksi. Syyllinen on todennäköisesti mariaDB'n ja
+                    backendin välinen toteutus.
+                </p>
+                <p>
+                    Bootstrapistakaan en välitä, sillä haluan pitää ohjakset omissa käsissäni 100 prosenttisesti. Bootstrap on kuitenkin siedettävämpi kirjasto kuin REACT.
+                    Bootstrapilla on myös yleiskäteviä komponentteja, mutta niiden koodaaminen itse ei veisi juurikaan aikaa. Suurin ärsytys Bootstrapin kanssa on ollut
+                    dokumentaation heikko laatu ja sen löytäminen internetin syövereistä.
+                </p>
+                <p>
+                    Alla tulen listaamaan vain mielekkäät koodin osat, mutta loput koodit löytyvät <a href="https://github.com/Tharoux/webohjelmointi/tree/main/athlete">repositorysta</a>.
+                    Tiedosto App.js generoi käyttäjälle näkymän.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex1" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">App.css</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex1">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/App.css"></script>
+                </div>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex2" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">App.js</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex2">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/App.js"></script>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Tiedosto context.js määrittelee toiminnot front- ja backendin välillä.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex3" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">context.js</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex3">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/context.js"></script>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Tiedosto AddAthlete.js määrittelee sivuston, jolla käyttäjä voi lisätä urheilijoita.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex4" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">AddAthlete.js</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex4">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/components/AddAthlete.js"></script>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Tiedosto Athlete.js määrittelee sen ulkoasun miten urheilijat esitetään sivulla.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex5" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">Athlete.js</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex5">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/components/Athlete.js"></script>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Tiedosto AthleteInfo.js määrittelee pääsivun, joka näkyy käyttäjälle.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex6" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">AthleteInfo.js</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex6">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/components/AthleteInfo.js"></script>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Tiedosto Header.js määrittelee sivuston "pääpalkin", joka näkyy sivun yläreunassa.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex7" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">Header.js</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex7">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/components/Header.js"></script>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Tiedosto UpdateAthlete.js määrittelee sivun, jolla käyttäjä voi päivittää urheilijan tietoja.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex8" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">UpdateAthlete.js</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex8">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/components/UpdateAthlete.js"></script>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Tietokanta athletes.sql sivustolle.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex9" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">athletes.sql</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex9">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/components/athletes.sql"></script>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Tiedosto server.js määrittelee sivuston backendin.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex10" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">server.js</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex10">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/components/server.js"></script>
+                </div>
+            </div>
+            
+            <div class="row">
+                <p>
+                    Tiedosto info.js määrittelee informaatio sivun, joka kertoo sivuston käyttötarkoituksesta.
+                </p>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-dark">
+                    <div class="row">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#week5-ex11" aria-controls="navbarToggleExternalContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <!--<span class="navbar-toggler-icon"></span>-->
+                            <span class="align-middle">info.js</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="week5-ex11">
+                    <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/components/pages/Info.js"></script>
+                </div>
+            </div>
+    </body>
+</html>
