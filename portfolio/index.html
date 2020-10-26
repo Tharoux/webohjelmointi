@@ -10,10 +10,36 @@
         
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <link rel="stylesheet" href="./src/index.css">
+        <script src="./src/index.js"></script>
     </head>
     <body>
-        <div id="test">
-            <script src="http://gist-it.appspot.com/https://github.com/Tharoux/webohjelmointi/blob/main/athlete/src/context.js"></script>
+        <div class="container-xl">
+            <div class="row">
+                <nav class="navbar navbar-dark navbar-fixed-top justify-content-between">
+                    <div class="col-11">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">ePortfolio - Koskinen Simo</a>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#weeks" aria-controls="navbarToggleExternalContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="collapse navbar-collapse" id="weeks">
+                    <button type="button" id="week1" class="btn" onclick="contentButton(this)">Viikko 1</button>
+                    <button type="button" id="week2" class="btn" onclick="contentButton(this)">Viikko 2</button>
+                </div>
+            </div>
+            <div class="row" id="contentRow">
+                <iframe id="contentFrame" src="./weeks/week1.html"></iframe>
+            </div>
         </div>
     </body>
 </html>

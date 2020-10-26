@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>Puhelinluettelon hakunäkymä</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+        <style>
+            table {
+                border-collapse: collapse;
+                background-color: rgba(144, 185, 144, 0.479);
+                min-width: 100;
+                width: auto;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            thead {
+                text-align: center;
+                font-size: 20px;
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px rgb(0,0,0);
+                border-style: none none double none;
+                border-bottom: 1px solid  rgb(144, 185, 144);
+            }
+            tbody td {
+                height: 25px;
+                color: rgb(119, 119, 119);
+                padding-inline: 10px;
+            }
+            #phone {
+                text-align: right;
+            }
+            #contact:hover {
+                background-color: rgb(144, 185, 144);
+                transform: scale(1.5);
+            }
+        </style>
+        
+    </head>
+
+
+    <body>
+        <div id="container">
+            <p style="font-family: 'Courier New', Courier, monospace; text-decoration-line: underline; font-size: large; text-align: center;">Puhelinluettelo</p>
+            <div style="display: flex; justify-content: center;">
+                <script> 
+                    $(document).ready(function () {
+                        //Get the JSON file from the database. Store it in result (done automatically)
+                        //and then use it in the function.
+                        $.getJSON("http://localhost:3000/users", function(result) {
+
+                            //This foreach-loop will go through the JSON file in result.
+                            $.each(result, function(index, value) {
+
+                                //Add them to the tablebody.
+                                $(document.getElementById("puhelinluettelo")).append(
+                                    "<tr id='contact'><td id='name'>" + value.nimi + "</td>" +
+                                    "<td id='phone'>" + value.puhelin + "</td></tr>"
+                                );
+                            });
+                        })
+                    });
+                </script>
+
+                <table id="puhelinluettelo">
+                    <thead>
+                        <tr>
+                            <td>
+                                Nimi
+                            </td>
+                            <td>
+                                Puhelin
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

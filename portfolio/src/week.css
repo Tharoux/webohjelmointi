@@ -1,0 +1,17 @@
+body {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+iframe {
+    width: 100%;
+    border: 1px rgba(0,0,0,0.1);
+    border-style: none;
+    background-color: rgba(0,0,0,0);
+}
+
+.navbar-toggler {
+    text-align: center;
+}
